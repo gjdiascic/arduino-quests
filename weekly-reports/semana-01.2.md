@@ -1,4 +1,4 @@
-# Semana 1.1 — Protoboard virtual, resistores e LEDs externos
+# Semana 1.2 — Protoboard virtual, resistores e LEDs externos
 ## 1. Objetivo da semana
 Descrever o objetivo técnico da atividade.
 ## 2. O que foi estudado
