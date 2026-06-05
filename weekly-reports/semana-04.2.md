@@ -1,4 +1,4 @@
-# Semana 4.1 — Transistor BJT como chave
+# Semana 4.2 — Transistor BJT como chave
 ## 1. Objetivo da semana
 Descrever o objetivo técnico da atividade.
 ## 2. O que foi estudado
