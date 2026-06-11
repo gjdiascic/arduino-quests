@@ -24,11 +24,12 @@ Inserir imagem do circuito no Tinkercad ou foto do hardware real.
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
 |---|---|---|
-| LED | Vermelho | saída - pino 13 |
-| Resistores | 330 Ω | Limitar corrente do LED |
+| LED | Vermelho | Saída - pino 13 |
+| Resistore | 330 Ω | Limitar corrente do LED |
 | LED | Verde | Saída - pino 11 |
-| Resistores | 330 Ω | Limitar corrente do LED |
+| Resistore | 330 Ω | Limitar corrente do LED |
 | LED | Amarelo | Saída - pino 12 |
+| Resistore | 330 Ω | Limitar corrente do LED |
 
 ## 7. Código
 Indicar o arquivo principal do firmware e explicar a lógica usada.
