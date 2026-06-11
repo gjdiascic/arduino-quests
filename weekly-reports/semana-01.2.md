@@ -1,19 +1,19 @@
 # Semana 1.2 — Protoboard virtual, resistores e LEDs externos
 ## 1. Objetivo da semana
-Compreender os fundamentos do Arduino, configurar o ambiente de simulação virtual no Tinkercad, aprender a manipular pinos digitais de saída, utilizar o GitHub para o controle de versão e documentação do projeto e se familiarizar com o funcionamento do código no Arduino.
+Montar um semáforo simples com três LEDs (verde, amarelo e vermelho) na protoboard, calcular os resistores limitadores de corrente usando a Lei de Ohm e programar a sequência correta de acionamento no Arduino.
 ## 2. O que foi estudado
-Listar os principais conteúdos estudados na semana.
-Exemplo:
-- Uso de pinos digitais.
-- Funcionamento de LED e resistor.
-- Estrutura básica de um programa Arduino.
-- Simulação no Tinkercad.
-- Registro da atividade no GitHub.
+- Organização elétrica da protoboard
+- Função do resistor limitador de corrente em circuitos com LED
+- Cálculo de resistor usando a Lei de Ohm
+- Pinos digitais do Arduino e função digitalWrite()
+- Estrutura básica de um programa Arduino (setup() e loop())
+- Simulação do circuito no Tinkercad
+- Registro da atividade no GitHub
 ## 3. O que eu aprendi
 Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
-### Estudante 1
+### Giselly Jahel Dias
 Texto individual do estudante.
-### Estudante 2
+### Thalisson Souza Silva
 Nessa semana 1.2, pude aprender como funciona a lógica do código em relação à alternância de funções (ligar um led, desligar outro led etc). E também aprendi como o Arduino "conversa" com o protoboard.
 ## 4. Explicação técnica da atividade
 O circuito é composto por três LEDs (verde, amarelo e vermelho) conectados aos pinos digitais 11, 12 e 13 do Arduino UNO, respectivamente. Cada LED possui um resistor de 330 Ω em série entre seu cátodo e o rail negativo da protoboard, que por sua vez está conectado ao GND do Arduino. Essa configuração limita a corrente que passa pelo LED a aproximadamente 9 mA, calculado pela Lei de Ohm:
