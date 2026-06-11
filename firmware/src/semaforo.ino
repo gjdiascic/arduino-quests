@@ -33,10 +33,5 @@ void loop() {
   digitalWrite(LED_AMARELO,  LOW);
   digitalWrite(LED_VERMELHO, HIGH);
   delay(5000); // 5 segundos
-  
-   // --- AMARELO: atenção --- 
-  digitalWrite(LED_VERDE,    LOW);
-  digitalWrite(LED_AMARELO,  HIGH);
-  digitalWrite(LED_VERMELHO, LOW);
   delay(2000); // 2 segundos
 }
