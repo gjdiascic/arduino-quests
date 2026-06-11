@@ -37,8 +37,8 @@ Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
 |---|---|---|
 | Arduino Uno | - | Microcontrolador, gera os sinais digitais |
-| LED | Vermelho | Indicar sinal aberto |
-| LED | Verde | Indicar sinal fechado |
+| LED | Verde | Indicar sinal aberto |
+| LED | Vermelho| Indicar sinal fechado |
 | LED | Amarelo | Indicar atenção |
 | Resistor | 330 Ω | Limitar corrente do LED |
 | Protoboard | - | Organizar as conexões do circuito |
