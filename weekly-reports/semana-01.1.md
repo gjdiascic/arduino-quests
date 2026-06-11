@@ -1,6 +1,6 @@
 # Semana 1.1 — Introdução ao Arduino, GitHub e simulação
 ## 1. Objetivo da semana
-Compreender os fundamentos do Arduino, configurar o ambiente de simulação virtual no Tinkercad, aprender a manipular pinos digitais de saída e utilizar o GitHub para o controle de versão e documentação do projeto e se familiarizar com o funcionamento do código no Arduino.
+Compreender os fundamentos do Arduino, configurar o ambiente de simulação virtual no Tinkercad, aprender a manipular pinos digitais de saída, utilizar o GitHub para o controle de versão e documentação do projeto e se familiarizar com o funcionamento do código no Arduino.
 ## 2. O que foi estudado
 - Manipulação de pinos digitais (`pinMode()`, `digitalWrite()` e `delay()`);
 - Estrutura fundamental de um firmware (`setup()` e `loop()`);
