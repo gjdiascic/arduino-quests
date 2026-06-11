@@ -30,26 +30,10 @@ Para cumprir o critério de aceite de criar três padrões de pisca (lento, ráp
 | Arduino | Uno R3 | Controlar o circuito e processar o código|
 
 ## 7. Código
-O código abaixo foi modularizado utilizando a função obrigatória `piscarLed`, permitindo alternar de forma limpa entre os três padrões exigidos (lento, rápido e sequência personalizada).
+O arquivo principal do firmware é piscarled.ino, localizado em firmware/src/.
 
-```cpp
-void piscarLed(int pino, int tempoLigado, int tempoDesligado){
-  	digitalWrite(pino, HIGH); //liga o led
-  	delay(tempoLigado); //espera o tempo ligado
-	digitalWrite(pino, LOW); //desliga o led
-	delay(tempoDesligado); //espera o tempo desligado
-}
+O código foi modularizado utilizando a função obrigatória `piscarLed`, permitindo alternar de forma limpa entre os três padrões exigidos (lento, rápido e sequência personalizada).
 
-void setup() {
-	pinMode(13, OUTPUT); //configura o pino 13 como saída 
-}
-
-void loop() {
-	piscarLed(13, 1200, 1500); //pisca lento
-	piscarLed(13, 3, 7); //pisca rápido
-	piscarLed(13, 700, 900); //sequência personalizada
-}
-```
 ## 8. Testes realizados
 O teste foi executado diretamente no ambiente virtual do Tinkercad. Foram validados de forma cronometrada os três estágios de funcionamento do LED, garantindo que o programa realizasse a transição automática entre o modo lento, o modo rápido e a sequência personalizada sem erros.
 ## 9. Resultados obtidos
