@@ -14,7 +14,7 @@ Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
 ### Estudante 1
 Texto individual do estudante.
 ### Estudante 2
-Texto individual do estudante.
+Nessa semana 1.2, pude aprender como funciona a lógica do código em relação à alternância de funções (ligar um led, desligar outro led etc). E também aprendi como o Arduino "conversa" com o protoboard.
 ## 4. Explicação técnica da atividade
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
