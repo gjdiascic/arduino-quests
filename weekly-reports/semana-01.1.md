@@ -13,7 +13,7 @@ Compreender os fundamentos do Arduino, configurar o ambiente de simulação virt
 ### Giselly Jahel Dias
 Na semana 1.1, eu aprendi a realizar simulações na plataforma Tinkercad, bem como a manipular pinos digitais e LED's, através do uso de funções. Também compreendi conceitos básicos acerca do hardware Arduino Uno essenciais para o desenvolvimento deste projeto.
 ### Thalisson Souza Silva
-Texto individual do estudante.
+Aprendi coisas fundamentais para um bom funcionamento de um projeto Arduino que envolva Led, como os resistores por exemplo. E a lógica por trás do próprio código do projeto em questão.
 ## 4. Explicação técnica da atividade
 O circuito consiste em um LED conectado a um pino digital do Arduino, protegido por um resistor limitador de corrente para evitar curto circuito. No software, configuramos o pino como saída (`OUTPUT`). 
 Para cumprir o critério de aceite de criar três padrões de pisca (lento, rápido e personalizado), foi desenvolvida uma função customizada chamada `piscarLed()`. Esta função recebe como parâmetros o pino do LED, o tempo que ele deve permanecer ligado e o tempo que deve permanecer desligado. O loop principal executa sequencialmente esses três padrões, criando a transição visual exigida.
