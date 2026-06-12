@@ -9,7 +9,7 @@ void setup() {
   pinMode(LED_AMARELO,  OUTPUT);
   pinMode(LED_VERMELHO, OUTPUT);
 
-  // Faz com que todos começam apagados
+  // Faz com que todos comecem apagados
   digitalWrite(LED_VERDE,    LOW);
   digitalWrite(LED_AMARELO,  LOW);
   digitalWrite(LED_VERMELHO, LOW);
