@@ -11,7 +11,9 @@ Montar um semáforo simples com três LEDs (verde, amarelo e vermelho) na protob
 - Registro da atividade no GitHub.
 ## 3. O que eu aprendi
 ### Giselly Jahel Dias
-Texto individual do estudante.
+Na semana 01.2, o projeto evoluiu para um circuito com três LEDs na protoboard, simulando um semáforo. Tive meu primeiro contato real com a organização elétrica da protoboard; entender como os rails positivo e negativo funcionam e como os furos são interligados internamente foi essencial para montar o circuito corretamente.
+Aprendi também a calcular o resistor limitador de corrente usando a Lei de Ohm. Com uma tensão de alimentação de 5V, tensão de queda do LED de 2V e corrente desejada de 9 mA, o cálculo resultou em aproximadamente 330 Ω, valor que garante o funcionamento seguro do LED sem danificá-lo.
+No código, trabalhei com a lógica de acionamento exclusivo: a cada fase do semáforo, um LED é ligado com HIGH enquanto os outros dois são explicitamente desligados com LOW. Isso garante que apenas um LED esteja aceso por vez, reproduzindo o comportamento real de um semáforo.
 ### Thalisson Souza Silva
 Nessa semana 1.2, pude aprender como funciona a lógica do código em relação à alternância de funções (ligar um led, desligar outro led etc). E também aprendi como o Arduino "conversa" com o protoboard.
 ## 4. Explicação técnica da atividade
