@@ -12,7 +12,6 @@ Exemplo:
 - O fenômeno de bounce mecânico em botões e como o debounce por software resolve o problema.
 - Detecção de borda de descida (HIGH → LOW) para registrar apenas um evento por pressão.
 ## 3. O que eu aprendi
-
 ### Giselly Jahel Dias
 
 ### Thalisson Souza
@@ -21,17 +20,17 @@ Aprendi que um pino configurado como entrada, sem nenhuma referência de tensão
 ## 4. Explicação técnica da atividade
 O botão é conectado entre o pino 2 do Arduino e o GND. O INPUT_PULLUP interno mantém o pino em 5V (HIGH) enquanto o botão está solto. Ao pressionar o botão, o pino é conectado ao GND e a leitura cai para LOW. O LED está no pino 13 com um resistor de 220 Ω em série para limitar a corrente.
 
-Por que usar INPUT_PULLUP?
+* Por que usar INPUT_PULLUP?
 
 Sem um resistor de referência, o pino de entrada fica eletricamente "no ar" (flutuando). Qualquer campo elétrico ao redor pode induzir tensão no pino, causando leituras aleatórias. O INPUT_PULLUP conecta o pino ao VCC através de um resistor interno, garantindo que a leitura padrão seja HIGH e só vá a LOW quando o botão realmente fechar o circuito com o GND.
 
-Diferença pull-up × pull-down:
+* Diferença pull-up × pull-down:
 
 - Pull-up: resistor entre o pino e VCC. Pino padrão = HIGH. Botão conecta ao GND → LOW.
 - Pull-down: resistor entre o pino e GND. Pino padrão = LOW. Botão conecta ao VCC → HIGH.
 O INPUT_PULLUP usa pull-up interno, dispensando o resistor externo.
 
-Debounce por software
+* Debounce por software:
 
 Botões mecânicos produzem oscilações rápidas ao serem pressionados (bounce), que duram tipicamente entre 5 ms e 50 ms. Sem tratamento, o Arduino registraria vários eventos em cada pressão. A estratégia usada:
 
@@ -39,7 +38,7 @@ Botões mecânicos produzem oscilações rápidas ao serem pressionados (bounce)
 - Aguarda 50 ms sem nova mudança → considera o sinal estável.
 - Só então confirma o novo estado e executa a ação.
 
-Detecção de borda
+* Detecção de borda:
 
 O código detecta a borda de descida (HIGH → LOW), ou seja, o momento exato em que o botão é pressionado. Isso garante que o LED alterne uma única vez por pressão, mesmo que o botão fique pressionado por vários segundos.
 ## 5. Circuito
