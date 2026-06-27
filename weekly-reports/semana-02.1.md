@@ -55,7 +55,7 @@ O código detecta a borda de descida (HIGH → LOW), ou seja, o momento exato em
 | Push-up interno | ~20 kΩ (via INPUT_PULLUP) | Manter pino 2 em estado definido (HIGH) quando botão solto |
 
 ## 7. Código
-O arquivo principal do firmware é ligabotao.ino, localizado em firmware/src/ligabotao.ino
+O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/ligabotao.ino
 ```cpp
 //define em quais pinos do Arduino os componentes estão ligados
 const int PINO_BOTAO = 2;
