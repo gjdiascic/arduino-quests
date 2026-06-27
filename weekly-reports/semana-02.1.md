@@ -13,10 +13,11 @@ Exemplo:
 - Detecção de borda de descida (HIGH → LOW) para registrar apenas um evento por pressão.
 ## 3. O que eu aprendi
 
+### Giselly Jahel Dias
+
 ### Thalisson Souza
 Aprendi que um pino configurado como entrada, sem nenhuma referência de tensão, fica em estado indefinido — ele pode ler HIGH ou LOW aleatoriamente dependendo de interferências elétricas ao redor. O resistor pull-up resolve isso conectando o pino ao VCC (5V) quando o botão está solto, garantindo sempre uma leitura estável. Também entendi que o botão não é ideal mecanicamente: quando pressionado, ele "quica" (bounce) e gera múltiplos pulsos em milissegundos, o que faria o LED acender e apagar várias vezes. O debounce por software espera o sinal estabilizar antes de registrar a ação.
-### Estudante 2
-Texto individual do estudante.
+
 ## 4. Explicação técnica da atividade
 O botão é conectado entre o pino 2 do Arduino e o GND. O INPUT_PULLUP interno mantém o pino em 5V (HIGH) enquanto o botão está solto. Ao pressionar o botão, o pino é conectado ao GND e a leitura cai para LOW. O LED está no pino 13 com um resistor de 220 Ω em série para limitar a corrente.
 
