@@ -116,9 +116,9 @@ O circuito foi montado e testado primeiramente no Tinkercad, onde foi possível 
 ## 9. Resultados obtidos
 Apresentar leituras, imagens, vídeo curto, tabela ou observações.
 ## 10. Problemas encontrados
-Indicar erros de montagem, código, alimentação, ruído, leitura incorreta ou instabilidade.
+Nenhum erro foi encontrado.
 ## 11. Correções realizadas
-Explicar como os problemas foram corrigidos.
+Não foi necessário realizar correções.
 ## 12. Relação com aplicações do dia a dia
 Explicar como o conceito estudado na semana pode ser usado em uma solução real.
 ## 13. Critério de aceite
