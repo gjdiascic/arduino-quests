@@ -12,7 +12,7 @@ Exemplo:
 - O fenômeno de bounce mecânico em botões e como o debounce por software resolve o problema.
 - Detecção de borda de descida (HIGH → LOW) para registrar apenas um evento por pressão.
 ## 3. O que eu aprendi
-Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
+
 ### Thalisson Souza
 Aprendi que um pino configurado como entrada, sem nenhuma referência de tensão, fica em estado indefinido — ele pode ler HIGH ou LOW aleatoriamente dependendo de interferências elétricas ao redor. O resistor pull-up resolve isso conectando o pino ao VCC (5V) quando o botão está solto, garantindo sempre uma leitura estável. Também entendi que o botão não é ideal mecanicamente: quando pressionado, ele "quica" (bounce) e gera múltiplos pulsos em milissegundos, o que faria o LED acender e apagar várias vezes. O debounce por software espera o sinal estabilizar antes de registrar a ação.
 ### Estudante 2
@@ -42,7 +42,7 @@ Detecção de borda
 
 O código detecta a borda de descida (HIGH → LOW), ou seja, o momento exato em que o botão é pressionado. Isso garante que o LED alterne uma única vez por pressão, mesmo que o botão fique pressionado por vários segundos.
 ## 5. Circuito
-<img width="1198" height="532" alt="image" src="https://github.com/user-attachments/assets/10cfc825-745a-4625-a737-ee118a5957cb" />
+<img width="1536" height="694" alt="image" src="https://github.com/user-attachments/assets/922ca9dc-7ca6-4a90-b8cb-c8e44650cd71" />
 
 ## 6. Componentes utilizados
 | Componente | Valor/modelo | Função no circuito |
@@ -55,9 +55,63 @@ O código detecta a borda de descida (HIGH → LOW), ou seja, o momento exato em
 | Push-up interno | ~20 kΩ (via INPUT_PULLUP) | Manter pino 2 em estado definido (HIGH) quando botão solto |
 
 ## 7. Código
-Indicar o arquivo principal do firmware e explicar a lógica usada.
+O arquivo principal do firmware é ligabotao.ino, localizado em firmware/src/ligabotao.ino
+```cpp
+//define em quais pinos do Arduino os componentes estão ligados
+const int PINO_BOTAO = 2;
+const int PINO_LED   = 13;
+
+const unsigned long TEMPO_DEBOUNCE = 50; //tempo de espera para garantir que o botão estabilizou
+
+bool estadoLed        = false; //armazena o estado atual do LED (false = desligado, true = ligado)
+bool leituraAnterior  = HIGH; //guarda o último estado lido do botão no ciclo passado do código
+bool estadoBotao      = HIGH; //guarda o estado final "filtrado" e estável do botão
+unsigned long ultimoTempo = 0; //armazena o exato momento em que o botão mudou de estado pela última vez
+
+void setup() {
+  pinMode(PINO_BOTAO, INPUT_PULLUP); //ativa o resistor interno do Arduino para o botão
+  pinMode(PINO_LED,   OUTPUT); //configura o pino do LED como saída
+  Serial.begin(9600); //abre a comunicação com o monitor serial do computador para enviar textos
+}
+
+void loop() {
+  bool leituraAtual = digitalRead(PINO_BOTAO); //faz a leitura instantânea do pino do botão (guarda se está HIGH ou LOW agora)
+	
+  //se a leitura atual for diferente da leitura anterior, significa que o botão mudou
+  if (leituraAtual != leituraAnterior) {
+    ultimoTempo = millis(); //atualiza o cronômetro salvando o tempo atual do Arduino
+  }
+
+  if ((millis() - ultimoTempo) >= TEMPO_DEBOUNCE) {//se o tempo atual menos o tempo da última mudança for maior ou igual a 50ms, significa que o sinal do botão já estabilizou
+    if (leituraAtual != estadoBotao) {
+      estadoBotao = leituraAtual; //atualiza o estado oficial do botão com a nova leitura estável
+
+      if (estadoBotao == LOW) { //se o estado oficial do botão mudou para LOW, significa que ele foi pressionado
+        //inverte o estado do LED usando o operador NOT (!)
+        //se era falso (desligado) vira verdadeiro (ligado), e vice-versa
+        estadoLed = !estadoLed;
+
+        if (estadoLed == true) { //se a inversão acima resultou em verdadeiro (true)
+          digitalWrite(PINO_LED, HIGH); //envia 5V para o pino 13, acendendo o LED
+          Serial.println("LED: LIGADO"); //escreve no monitor serial do computador
+        } else {//se resultou em falso (false)
+          digitalWrite(PINO_LED, LOW); //corta a energia do pino 13, apagando o LED
+          Serial.println("LED: DESLIGADO"); //escreve no monitor serial do computador
+        }
+      }
+    }
+  }
+  leituraAnterior = leituraAtual; //atualiza a variável 'leituraAnterior' com o valor deste ciclo
+}
+```
+O algoritmo foi desenvolvido na linguagem C/C++ (padrão Arduino) e implementa o controle de um LED atuando como um interruptor do tipo toggle (alterna o estado a cada clique). A lógica do firmware baseia-se em três pilares principais:
+
+- Uso de Resistor Interno: a configuração INPUT_PULLUP garante que o pino do botão permaneça em nível lógico alto ($5\text{ V}$) enquanto em repouso, evitando flutuações de ruído elétrico;
+- Filtro de Debounce por Software: utilizando a função nativa millis(), o programa cria uma janela de temporização de 50ms. Qualquer oscilação mecânica provocada pelo impacto das lâminas internas do botão dentro desse intervalo é ignorada, prevenindo múltiplos acionamentos erráticos;
+- Detecção de Borda de Descida: o estado do LED só é efetivamente invertido no momento exato em que o botão passa de solto (HIGH) para pressionado (LOW), garantindo uma transição limpa e precisa a cada comando do usuário. Além disso, o status atual do sistema é transmitido via comunicação serial para fins de monitoramento e depuração.
+
 ## 8. Testes realizados
-Descrever como o teste foi executado.
+O circuito foi montado e testado primeiramente no Tinkercad, onde foi possível verificar a sequência de acionamento dos LEDs e os tempos de cada fase. Em seguida, utilizando a Arduino IDE, o código final com a lógica de debounce foi compilado e gravado no microcontrolador físico para a validação do comportamento dos componentes em tempo real.
 ## 9. Resultados obtidos
 Apresentar leituras, imagens, vídeo curto, tabela ou observações.
 ## 10. Problemas encontrados
@@ -67,6 +121,8 @@ Explicar como os problemas foram corrigidos.
 ## 12. Relação com aplicações do dia a dia
 Explicar como o conceito estudado na semana pode ser usado em uma solução real.
 ## 13. Critério de aceite
-Informar se a entrega passou ou não passou no critério técnico definido.
+[ x ] PASSOU  
+[   ] NÃO PASSOU
+
 ## 14. Link da simulação, vídeo ou evidência
-Inserir link do Tinkercad, vídeo, imagem, commit ou pasta do GitHub.
+https://www.tinkercad.com/things/bMzEF1l7QmI-semana-21-sistema-ligadesliga-com-botao/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fall&sharecode=blzUgx7yR6jIgNLscghMGClKAv5awgwIpE3p18OPVko
