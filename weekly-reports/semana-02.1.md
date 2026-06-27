@@ -120,7 +120,10 @@ Nenhum erro foi encontrado.
 ## 11. Correções realizadas
 Não foi necessário realizar correções.
 ## 12. Relação com aplicações do dia a dia
-Explicar como o conceito estudado na semana pode ser usado em uma solução real.
+A combinação de leituras de entradas digitais, resistores de pull-up/pull-down e debounce é a base de controle para qualquer interface física humana na eletrônica moderna. Esse conceito pode ser aplicado em:
+
+Teclados de computador: evitando que uma tecla qualquer, ao ser pressionado, adicione inúmeros caracteres na tela, apenas com um clique rápido.
+
 ## 13. Critério de aceite
 [ x ] PASSOU  
 [   ] NÃO PASSOU
