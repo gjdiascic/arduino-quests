@@ -19,6 +19,7 @@ Explicar como o circuito funciona, como o código funciona e qual é a relação
 e software.
 ## 5. Circuito
 <img width="1536" height="694" alt="image" src="https://github.com/user-attachments/assets/a529ccae-00a9-4c13-9e6a-3a4a64fb5dd6" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
