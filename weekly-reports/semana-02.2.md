@@ -10,16 +10,15 @@ Exemplo:
 - Simulação no Tinkercad.
 - Registro da atividade no GitHub.
 ## 3. O que eu aprendi
-Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
-### Estudante 1
+### Giselly Jahel Dias
 Texto individual do estudante.
-### Estudante 2
+### Thalisson Souza Silva
 Texto individual do estudante.
 ## 4. Explicação técnica da atividade
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="image" src="https://github.com/user-attachments/assets/a529ccae-00a9-4c13-9e6a-3a4a64fb5dd6" />
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
@@ -40,6 +39,7 @@ Explicar como os problemas foram corrigidos.
 ## 12. Relação com aplicações do dia a dia
 Explicar como o conceito estudado na semana pode ser usado em uma solução real.
 ## 13. Critério de aceite
-Informar se a entrega passou ou não passou no critério técnico definido.
+[ x ] PASSOU  
+[   ] NÃO PASSOU
 ## 14. Link da simulação, vídeo ou evidência
-Inserir link do Tinkercad, vídeo, imagem, commit ou pasta do GitHub.
+https://www.tinkercad.com/things/7ftC6eeIt30-semana-22-brilho-de-um-led-com-potenciometro-/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=CHho_hSOqlJXmgqBzBvQSTK1_43bCmd16UhCwuyAVeA
