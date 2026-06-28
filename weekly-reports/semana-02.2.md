@@ -1,6 +1,6 @@
 # Semana 2.2 — Entradas analógicas, potenciômetro e PWM
 ## 1. Objetivo da semana
-Aprender a ler sinais analógicos com o Arduino utilizando o ADC, e controlar o brilho de um LED proporcionalmente ao valor lido de um potenciômetro, usando PWM como saída.
+Aprender a ler sinais analógicos com o Arduino utilizando o ADC, e controlar o brilho de um LED proporcionalmente ao valor lido de um potenciômetro, utilizando PWM como saída.
 ## 2. O que foi estudado
 - Funcionamento de entradas analógicas e diferença em relação a entradas digitais;
 - Como o ADC do Arduino converte tensão em valor numérico (0 a 1023);
