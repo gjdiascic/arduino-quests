@@ -21,11 +21,15 @@ e software.
 <img width="1536" height="694" alt="image" src="https://github.com/user-attachments/assets/a529ccae-00a9-4c13-9e6a-3a4a64fb5dd6" />
 
 ## 6. Componentes utilizados
-Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
 |---|---|---|
-| LED | Vermelho | Indicar saída digital |
-| Resistor | 220 Ω | Limitar corrente do LED |
+| Arduino Uno | ATmega328P | Ler o potenciômetro e controlar o brilho do LED via PWM |
+| LED | Vermelho | Variar o brilho conforme o sinal PWM recebido |
+| Resistor | 220 Ω | Limitar a corrente que passa pelo LED, evitando que queime |
+| Potenciômetro | 10 kΩ | Dividir a tensão e gerar um valor analógico entre 0V e 5V |
+| Multímetro | — | Medir a tensão no circuito para verificar a variação gerada pelo potenciômetro |
+| Protoboard | — | Montagem do circuito  |
+| Fios jumper | — | Realizar as conexões elétricas entre os componentes e o Arduino |
 
 ## 7. Código
 Indicar o arquivo principal do firmware e explicar a lógica usada.
