@@ -23,7 +23,7 @@ e software.
 ## 6. Componentes utilizados
 | Componente | Valor/modelo | Função no circuito |
 |---|---|---|
-| Arduino Uno | ATmega328P | Ler o potenciômetro e controlar o brilho do LED via PWM |
+| Arduino | Uno R3 | Ler o potenciômetro e controlar o brilho do LED via PWM |
 | LED | Vermelho | Variar o brilho conforme o sinal PWM recebido |
 | Resistor | 220 Ω | Limitar a corrente que passa pelo LED, evitando que queime |
 | Potenciômetro | 10 kΩ | Dividir a tensão e gerar um valor analógico entre 0V e 5V |
