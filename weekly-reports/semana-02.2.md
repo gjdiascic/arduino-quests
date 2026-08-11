@@ -61,7 +61,7 @@ No `loop()`, a cada ciclo o Arduino lê a tensão no pino do potenciômetro com 
 
 Em seguida, o código imprime no Serial Monitor tanto o valor bruto lido do ADC quanto o valor já convertido para PWM, usando uma sequência de `Serial.print()` e `Serial.println()`, o que permite visualizar em tempo real a correspondência entre a posição do potenciômetro e a resposta do LED. Por fim, um `delay(100)` insere uma pausa de 100ms entre as leituras, evitando sobrecarregar o Serial Monitor com atualizações excessivas.
 ## 8. Testes realizados
-Descrever como o teste foi executado.
+O teste foi feito na simulação do Tinkercad, com o Serial Monitor aberto (9600 baud) para acompanhar os valores em tempo real. Ao girar o potenciômetro de uma extremidade a outra, observou-se que o ADC variou de 0 a 1023 e o PWM de 0 a 255 de forma proporcional, com o LED variando o brilho de apagado a máximo de forma gradual. O multímetro foi usado para confirmar que a tensão no terminal central do potenciômetro correspondia aos valores lidos pelo Arduino.
 ## 9. Resultados obtidos
 Apresentar leituras, imagens, vídeo curto, tabela ou observações.
 ## 10. Problemas encontrados
