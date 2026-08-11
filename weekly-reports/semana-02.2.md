@@ -63,13 +63,14 @@ Em seguida, o código imprime no Serial Monitor tanto o valor bruto lido do ADC 
 ## 8. Testes realizados
 O teste foi feito na simulação do Tinkercad, com o Serial Monitor aberto (9600 baud) para acompanhar os valores em tempo real. Ao girar o potenciômetro de uma extremidade a outra, observou-se que o ADC variou de 0 a 1023 e o PWM de 0 a 255 de forma proporcional, com o LED variando o brilho de apagado a máximo de forma gradual. O multímetro foi usado para confirmar que a tensão no terminal central do potenciômetro correspondia aos valores lidos pelo Arduino.
 ## 9. Resultados obtidos
-Apresentar leituras, imagens, vídeo curto, tabela ou observações.
+<img width="1210" height="682" alt="image" src="https://github.com/user-attachments/assets/e6eba163-3844-4461-853a-7079544c056b" />
+
 ## 10. Problemas encontrados
-Indicar erros de montagem, código, alimentação, ruído, leitura incorreta ou instabilidade.
+Nenhum problema encontrado.
 ## 11. Correções realizadas
-Explicar como os problemas foram corrigidos.
+Sem necessidade.
 ## 12. Relação com aplicações do dia a dia
-Explicar como o conceito estudado na semana pode ser usado em uma solução real.
+Esse conceito aparece em diversos dispositivos do cotidiano, como dimmers de lâmpadas, controles de volume, acelerador eletrônico de veículos e ventiladores com velocidade ajustável — todos traduzindo uma posição física (potenciômetro, pedal, botão) em um sinal proporcional. É também a base de sistemas de automação mais complexos, como termostatos e controles industriais, que leem sensores analógicos e ajustam sua resposta de forma contínua, exatamente como no experimento com o LED.
 ## 13. Critério de aceite
 [ x ] PASSOU  
 [   ] NÃO PASSOU
