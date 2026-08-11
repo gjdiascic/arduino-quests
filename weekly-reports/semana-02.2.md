@@ -55,12 +55,6 @@ void loop() {
 	delay(100); //aguarda 100ms para não sobrecarregar o Serial Monitor
 }
 ```
-Perfeito, aqui vai a descrição em texto corrido baseada exatamente no seu código:
-
----
-
-## 7. Código
-
 O código define duas constantes no início: `pinoPot`, associado ao pino A0 (entrada analógica do potenciômetro), e `pinoLed`, associado ao pino 9 (saída PWM do LED). No `setup()`, o pino do LED é configurado como saída com `pinMode(pinoLed, OUTPUT)`, e a comunicação serial é iniciada com `Serial.begin(9600)` para permitir a depuração via Serial Monitor.
 
 No `loop()`, a cada ciclo o Arduino lê a tensão no pino do potenciômetro com `analogRead(pinoPot)`, obtendo um valor bruto entre 0 e 1023 conforme a posição do eixo. Esse valor é então convertido para a faixa de 0 a 255 através de `map(leitura, 0, 1023, 0, 255)`, já que o `analogWrite()` trabalha com uma resolução de 8 bits, diferente dos 10 bits do ADC. O valor convertido é aplicado ao LED com `analogWrite(pinoLed, pwm)`, controlando o duty cycle do sinal PWM e, consequentemente, o brilho.
