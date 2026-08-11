@@ -34,6 +34,7 @@ O potenciômetro é o controle físico do usuário — sua posição determina a
 | Fios jumper | — | Realizar as conexões elétricas entre os componentes e o Arduino |
 
 ## 7. Código
+O arquivo .ino se encontra em firmaware\arduino\
 ```cpp
 const int pinoPot = A0; //pino analógico
 const int pinoLed = 9; //pino PWM
