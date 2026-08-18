@@ -19,7 +19,8 @@ Texto individual do estudante.
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="Semana 3 - Miniestação de leitura ambiental" src="https://github.com/user-attachments/assets/6d84b14c-cdb7-456a-89a3-cbd38be49650" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
