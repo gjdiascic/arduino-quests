@@ -19,7 +19,8 @@ Texto individual do estudante.
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="Semana 4 1 - Circuito do botão usando capacitor " src="https://github.com/user-attachments/assets/5b6bdc93-22d0-46ff-a91f-31c0d4f43e60" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
