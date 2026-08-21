@@ -11,23 +11,28 @@ Aprender como sensores básicos (resistivos e ativos) e comunicação serial fun
 - Uso do Serial Monitor para depuração e registro de leituras.
 - Simulação no Tinkercad, incluindo o uso dos controles deslizantes (sliders) de luz e temperatura para testar os sensores virtualmente.
 ## 3. O que eu aprendi
-Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
 ### Giselly Jahel Dias
 Texto individual do estudante.
 ### Thalisson Souza Silva
 Texto individual do estudante.
 ## 4. Explicação técnica da atividade
-Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
-e software.
+O circuito é composto por dois sensores lidos por entradas analógicas do Arduino:
+
+*LDR (A0):* por ser um componente resistivo de 2 pinos, sozinho ele não gera uma tensão que possa ser lida diretamente. Por isso é montado em um divisor de tensão: um pino do LDR é ligado ao 5V, e o outro pino é ligado simultaneamente ao pino A0 e a um resistor de 10 kΩ, cuja outra ponta vai ao GND. Como a resistência do LDR muda com a luminosidade, a tensão no ponto de junção (onde está o A0) também muda, permitindo a leitura pelo ADC.
+
+*TMP36 (A1):* é um sensor ativo de 3 pinos (5V, saída, GND) que já realiza a conversão de temperatura em tensão internamente, sem necessidade de resistor externo. O pino central é ligado diretamente ao A1.
+
+No código, o Arduino lê os dois valores analógicos (0–1023) a cada 200 ms. O valor do LDR é usado bruto (ADC) para indicar luminosidade relativa, enquanto o valor do TMP36 é convertido primeiro em tensão (leitura * 5.0 / 1023.0) e depois em graus Celsius pela fórmula do fabricante. Os resultados são impressos no Serial Monitor.
 ## 5. Circuito
 <img width="1536" height="694" alt="Semana 3 - Miniestação de leitura ambiental" src="https://github.com/user-attachments/assets/6d84b14c-cdb7-456a-89a3-cbd38be49650" />
 
 ## 6. Componentes utilizados
-Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
 |---|---|---|
-| LED | Vermelho | Indicar saída digital |
-| Resistor | 220 Ω | Limitar corrente do LED |
+| LDR (fotorresistor) | — | Varia resistência conforme a luz incidente |
+| Resistor | 10 kΩ | Forma o divisor de tensão com o LDR (pull-down) |
+| Sensor de temperatura | TMP36 | Fornece tensão de saída proporcional à temperatura |
+| Arduino Uno | — | Lê os sinais analógicos e envia dados via serial |
 
 ## 7. Código
 O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/miniestacao.ino
@@ -56,7 +61,11 @@ void loop() {
 }
 ```
 ## 8. Testes realizados
-Descrever como o teste foi executado.
+Testes feitos diretamente na simulação do Tinkercad, utilizando os controles deslizantes (sliders) de cada componente:
+
+- Ao clicar no LDR durante a simulação e mover o slider de luminosidade, verificou-se se o valor "Luz (ADC)" no Serial Monitor aumentava ou diminuía de forma coerente.
+- Ao clicar no TMP36 e mover o slider de temperatura, verificou-se se o valor em °C acompanhava a mudança de forma proporcional.
+- Conferência do baud rate do Serial Monitor (9600), garantindo compatibilidade com Serial.begin(9600) do código.
 ## 9. Resultados obtidos
 Apresentar leituras, imagens, vídeo curto, tabela ou observações.
 ## 10. Problemas encontrados
