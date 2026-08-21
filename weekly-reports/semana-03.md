@@ -1,19 +1,20 @@
 # Semana 3 — Sensores básicos e comunicação serial
 ## 1. Objetivo da semana
-Descrever o objetivo técnico da atividade.
+Aprender como sensores básicos (resistivos e ativos) e comunicação serial funcionam, construindo uma miniestação de leitura ambiental capaz de medir luminosidade e temperatura, exibindo os valores em tempo real no Serial Monitor.
 ## 2. O que foi estudado
-Listar os principais conteúdos estudados na semana.
-Exemplo:
-- Uso de pinos digitais.
-- Funcionamento de LED e resistor.
-- Estrutura básica de um programa Arduino.
-- Simulação no Tinkercad.
-- Registro da atividade no GitHub.
+- Diferença entre sensores passivos (resistivos) e sensores ativos.
+- Funcionamento do LDR (fotorresistor) e sua relação entre luz e resistência.
+- Divisor de tensão como forma de converter variação de resistência em variação de tensão.
+- Funcionamento do sensor de temperatura TMP36, que já entrega tensão de saída proporcional à temperatura, sem necessidade de resistor.
+- Leitura analógica via analogRead() e conversão de tensão a partir do valor do ADC (0–1023).
+- Fórmula de conversão do TMP36 para graus Celsius: (tensão - 0.5) * 100.
+- Uso do Serial Monitor para depuração e registro de leituras.
+- Simulação no Tinkercad, incluindo o uso dos controles deslizantes (sliders) de luz e temperatura para testar os sensores virtualmente.
 ## 3. O que eu aprendi
 Cada estudante deve escrever, com suas próprias palavras, o que aprendeu.
-### Estudante 1
+### Giselly Jahel Dias
 Texto individual do estudante.
-### Estudante 2
+### Thalisson Souza Silva
 Texto individual do estudante.
 ## 4. Explicação técnica da atividade
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
@@ -29,18 +30,43 @@ Listar componentes, valores e função no circuito.
 | Resistor | 220 Ω | Limitar corrente do LED |
 
 ## 7. Código
-Indicar o arquivo principal do firmware e explicar a lógica usada.
+O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/miniestacao.ino
+```cpp
+const int pinoLDR = A0;
+const int pinoTMP36 = A1;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int luz = analogRead(pinoLDR);
+  int leituraTemp = analogRead(pinoTMP36);
+
+  float tensao = leituraTemp * (5.0 / 1023.0);
+  float temperaturaC = (tensao - 0.5) * 100.0;
+
+  Serial.print("Luz (ADC): ");
+  Serial.print(luz);
+  Serial.print(" | Temperatura: ");
+  Serial.print(temperaturaC);
+  Serial.println(" °C");
+
+  delay(200);
+}
+```
 ## 8. Testes realizados
 Descrever como o teste foi executado.
 ## 9. Resultados obtidos
 Apresentar leituras, imagens, vídeo curto, tabela ou observações.
 ## 10. Problemas encontrados
-Indicar erros de montagem, código, alimentação, ruído, leitura incorreta ou instabilidade.
+Nenhum problema foi encontrado.
 ## 11. Correções realizadas
-Explicar como os problemas foram corrigidos.
+Não foi necessário realizar correções.
 ## 12. Relação com aplicações do dia a dia
-Explicar como o conceito estudado na semana pode ser usado em uma solução real.
+Esse tipo de leitura ambiental combinando luminosidade e temperatura é a base de sistemas de automação residencial e agrícola, como estufas automatizadas, iluminação inteligente que se ajusta à luz ambiente, ou sistemas de monitoramento climático simples. A lógica de sensor e Conversor Analógico-Digital é a mesma usada em termostatos, sistemas de irrigação automática e monitoramento de ambientes controlados.
 ## 13. Critério de aceite
-Informar se a entrega passou ou não passou no critério técnico definido.
+[ x ] PASSOU  
+[   ] NÃO PASSOU
 ## 14. Link da simulação, vídeo ou evidência
-Inserir link do Tinkercad, vídeo, imagem, commit ou pasta do GitHub.
+https://www.tinkercad.com/things/iVuMSIq6Bfl-semana-3-miniestacao-de-leitura-ambiental/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=RGbXiJ2w4LbbYE6k2Vtut6DHqtmYVGywYhjnmj0bPk0
