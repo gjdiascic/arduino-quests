@@ -67,7 +67,16 @@ Testes feitos diretamente na simulação do Tinkercad, utilizando os controles d
 - Ao clicar no TMP36 e mover o slider de temperatura, verificou-se se o valor em °C acompanhava a mudança de forma proporcional.
 - Conferência do baud rate do Serial Monitor (9600), garantindo compatibilidade com Serial.begin(9600) do código.
 ## 9. Resultados obtidos
-Apresentar leituras, imagens, vídeo curto, tabela ou observações.
+
+| Teste | Condição do slider | Luz (ADC) | Tensão TMP36 (V) | Temperatura (°C) | Observação |
+|---|---|---|---|---|---|
+| 1 | Luz mínima (escuro) | ~950–1023 | — | — | Resistência do LDR alta → tensão no A0 próxima de 5V |
+| 2 | Luz intermediária | ~400–600 | — | — | Valor do ADC varia proporcionalmente ao nível de luz |
+| 3 | Luz máxima (claro) | ~0–100 | — | — | Resistência do LDR baixa → tensão no A0 próxima de 0V |
+| 4 | Temperatura mínima do slider | — | ~0,25 | ~-25 | Tensão de saída do TMP36 no limite inferior |
+| 5 | Temperatura ambiente (~25 °C) | — | ~0,75 | ~25 | Valor de referência do sensor (0,75V = 25°C) |
+| 6 | Temperatura máxima do slider | — | ~1,25 | ~75 | Tensão de saída do TMP36 no limite superior |
+
 ## 10. Problemas encontrados
 Nenhum problema foi encontrado.
 ## 11. Correções realizadas
