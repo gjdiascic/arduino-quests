@@ -37,26 +37,40 @@ No código, o Arduino lê os dois valores analógicos (0–1023) a cada 200 ms. 
 ## 7. Código
 O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/miniestacao.ino
 ```cpp
+//Define o pino analógico onde o LDR (sensor de luz) está conectado
 const int pinoLDR = A0;
+
+//Define o pino analógico onde o TMP36 (sensor de temperatura) está conectado
 const int pinoTMP36 = A1;
 
 void setup() {
+  //Inicia a comunicação serial a 9600 bps, usada para enviar os dados ao computador
   Serial.begin(9600);
 }
 
 void loop() {
+  //Lê o valor bruto do ADC do LDR (varia de 0 a 1023 conforme a luminosidade)
   int luz = analogRead(pinoLDR);
+
+  //Lê o valor bruto do ADC do TMP36 (varia de 0 a 1023 conforme a tensão de saída do sensor)
   int leituraTemp = analogRead(pinoTMP36);
 
+  //Converte o valor lido (0-1023) para tensão real (0-5V)
+  //Fórmula: tensão = leitura * (tensão de referência / resolução do ADC)
   float tensao = leituraTemp * (5.0 / 1023.0);
+
+  //Converte a tensão para graus Celsius, conforme especificação do fabricante do TMP36
+  //O sensor entrega 0,5V a 0°C, com variação de 10mV por °C
   float temperaturaC = (tensao - 0.5) * 100.0;
 
+  //Envia os resultados formatados para o Serial Monitor
   Serial.print("Luz (ADC): ");
-  Serial.print(luz);
+  Serial.print(luz); // Valor bruto do LDR (quanto maior, menos luz)
   Serial.print(" | Temperatura: ");
-  Serial.print(temperaturaC);
+  Serial.print(temperaturaC); // Temperatura já convertida para °C
   Serial.println(" °C");
 
+  //Aguarda 200 ms antes da próxima leitura, evitando sobrecarregar o Serial Monitor
   delay(200);
 }
 ```
