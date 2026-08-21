@@ -2,8 +2,7 @@
 ## 1. Objetivo da semana
 Aprender a usar entradas digitais no Arduino, compreender o problema do sinal flutuante em pinos de entrada, aplicar resistores pull-up (interno) e pull-down (externo) para estabilizar o sinal, e implementar debounce por software para evitar múltiplos disparos indevidos ao pressionar um botão.
 ## 2. O que foi estudado
-Listar os principais conteúdos estudados na semana.
-Exemplo:
+
 - Funcionamento de entradas digitais com digitalRead().
 - Nível lógico alto (HIGH / 5V) e nível lógico baixo (LOW / 0V).
 - Por que pinos de entrada ficam flutuando sem referência de tensão.
