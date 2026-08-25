@@ -35,7 +35,7 @@ No código, o Arduino lê os dois valores analógicos (0–1023) a cada 200 ms. 
 | Arduino Uno | — | Lê os sinais analógicos e envia dados via serial |
 
 ## 7. Código
-O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/miniestacao.ino
+O arquivo principal do firmware é ligabotao.ino, localizado em firmware/arduino/semana-03.ino
 ```cpp
 //Define o pino analógico onde o LDR (sensor de luz) está conectado
 const int pinoLDR = A0;
