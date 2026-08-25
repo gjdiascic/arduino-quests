@@ -32,7 +32,7 @@ Para cumprir o critério de aceite de criar três padrões de pisca (lento, ráp
 | Arduino | Uno R3 | Controlar o circuito e processar o código|
 
 ## 7. Código
-O arquivo principal do firmware é piscarled.ino, localizado em firmware/arduino/piscarled.ino
+O arquivo principal do firmware é piscarled.ino, localizado em firmware/arduino/semana-01.1.ino
 
 ```cpp
 void piscarLed(int pino, int tempoLigado, int tempoDesligado){
