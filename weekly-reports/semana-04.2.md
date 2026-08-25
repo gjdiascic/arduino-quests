@@ -19,7 +19,8 @@ Texto individual do estudante.
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="Semana 4 2 - LED de maior corrente ou buzzer" src="https://github.com/user-attachments/assets/cab3ade4-fc5b-4eb3-87d9-b3e2d010eb70" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
