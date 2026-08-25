@@ -48,7 +48,7 @@ Listar componentes, valores e função no circuito.
 | Fios/Jumpers | - | Realizar conexões dos componentes |
 
 ## 7. Código
-O arquivo principal do firmware é semaforo.ino, localizado em firmware/arduino/semaforo.ino
+O arquivo principal do firmware é semaforo.ino, localizado em firmware/arduino/semana-01.2.ino
 ```cpp
 const int LED_VERDE    = 11;
 const int LED_AMARELO  = 12;
