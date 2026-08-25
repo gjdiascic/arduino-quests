@@ -19,7 +19,8 @@ Texto individual do estudante.
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="Semana 5 1 - MOSFET como chave para cargas maiores" src="https://github.com/user-attachments/assets/7653f190-84d0-4e62-b9a9-2e2a17a9825d" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
