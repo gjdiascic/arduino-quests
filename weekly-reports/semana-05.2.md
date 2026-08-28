@@ -19,7 +19,8 @@ Texto individual do estudante.
 Explicar como o circuito funciona, como o código funciona e qual é a relação entre hardware
 e software.
 ## 5. Circuito
-Inserir imagem do circuito no Tinkercad ou foto do hardware real.
+<img width="1536" height="694" alt="Semana 5 2 - Atuadores_ servo, motor DC, relé e  buzzer" src="https://github.com/user-attachments/assets/7cbe054b-02de-4b84-8a50-eaa10df7b52e" />
+
 ## 6. Componentes utilizados
 Listar componentes, valores e função no circuito.
 | Componente | Valor/modelo | Função no circuito |
@@ -28,7 +29,34 @@ Listar componentes, valores e função no circuito.
 | Resistor | 220 Ω | Limitar corrente do LED |
 
 ## 7. Código
-Indicar o arquivo principal do firmware e explicar a lógica usada.
+
+const int pinoLDR = A0;      // Sensor de luminosidade
+const int pinoBuzzer = 8;    // Base do transistor (via resistor de 2,2kΩ)
+const int limiteLuz = 300;   // Ajuste este valor conforme os testes no Serial Monitor
+
+void setup() {
+  pinMode(pinoBuzzer, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int luz = analogRead(pinoLDR); // Lê o valor do LDR (0-1023)
+
+  if (luz > limiteLuz) {
+    // Ambiente escuro (resistência do LDR alta) -> aciona o buzzer
+    digitalWrite(pinoBuzzer, HIGH);
+    Serial.print("ESCURO -> Buzzer ligado | ");
+  } else {
+    // Ambiente claro -> mantém desligado
+    digitalWrite(pinoBuzzer, LOW);
+    Serial.print("CLARO  -> Buzzer desligado | ");
+  }
+
+  Serial.print("Luz (ADC): ");
+  Serial.println(luz);
+
+  delay(200);
+}
 ## 8. Testes realizados
 Descrever como o teste foi executado.
 ## 9. Resultados obtidos
