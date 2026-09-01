@@ -12,7 +12,7 @@ Aprender como sensores básicos (resistivos e ativos) e comunicação serial fun
 - Simulação no Tinkercad, incluindo o uso dos controles deslizantes (sliders) de luz e temperatura para testar os sensores virtualmente.
 ## 3. O que eu aprendi
 ### Giselly Jahel Dias
-Texto individual do estudante.
+Aprendi que um sensor é um dispositivo capaz de detectar uma grandeza física, como a luz, por exemplo, e convertê-la em um sinal que o circuito eletrônico seja capaz de entender. Também aprendi que o Arduino não consegue medir a resistência diretamente, por isso é necessário utilizar um resistor auxiliar, para transformar a variação de resistência em uma variação de tensão. Ademais, aprendi que para converter a leitura bruta em tensão, usa-se: V = leitura x 5 /1023.
 ### Thalisson Souza Silva
 Texto individual do estudante.
 ## 4. Explicação técnica da atividade
